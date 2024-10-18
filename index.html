@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- ADS VERIFICATION LINE -->
+    <meta name="ppck-ver" content="1b02ba7dfd086c5ad089db8088f1be96" />
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ANNOUNCE BAR -->
+    <div class="news-bar">
+        <div class="news-inner">
+            <p class="news-text">Este sitio usa anuncios para mantenerse. Si usas un bloqueador, por favor desactívalo ♥.</p>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="src/logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Publicaciones</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="pages/changelog.md">Changelog</a></li>
+                <li><a href="mailto:info@yoline.es">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+     <h1 class="title">YoLine - Artículos web</h1>
+     <p class="subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quia tempora accusantium qui quo commodi architecto pariatur minus possimus modi.</p>
+
+     <br>
+
+     <h2 class="title-2">Leer las ultimas novedades</h2>
+
+     <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔎 Buscar artículos...">
+  </div>
+
+  <ul class="article-list" id="articleList">
+      <li class="article-item">
+          <img class="article-image" src="articles/1/imagen.jpg" alt="Imagen de Artículo 1">
+          <div class="article-content">
+              <h2 class="article-title">Cómo Mantener el Orden en un Proyecto de Programación: Estrategias Efectivas</h2>
+              <p class="article-description">En el competitivo mundo del desarrollo de software, mantener el orden en un proyecto de programación es fundamental para lograr el éxito. En este artículo, exploraremos estrategias efectivas que te ayudarán a organizar tu proyecto de programación desde la planificación inicial hasta la entrega final... <a class="article-link" href="articles/1/index.html">Leer más</a></p>
+          </div>
+      </li>
+      <li class="article-item">
+          <img class="article-image" src="ruta-a-imagen2.jpg" alt="Imagen de Artículo 2">
+          <div class="article-content">
+              <h2 class="article-title">Título del Artículo 2</h2>
+              <p class="article-description">Descripción breve del artículo 2. <a class="article-link" href="link-articulo-2.html">Leer más</a></p>
+          </div>
+      </li>
+      <li class="article-item">
+          <img class="article-image" src="ruta-a-imagen3.jpg" alt="Imagen de Artículo 3">
+          <div class="article-content">
+              <h2 class="article-title">Título del Artículo 3</h2>
+              <p class="article-description">Descripción breve del artículo 3. <a class="article-link" href="link-articulo-3.html">Leer más</a></p>
+          </div>
+      </li>
+
+      <p>ad space</p>
+
+      <li class="article-item">
+          <img class="article-image" src="ruta-a-imagen4.jpg" alt="Imagen de Artículo 4">
+          <div class="article-content">
+              <h2 class="article-title">Título del Artículo 4</h2>
+              <p class="article-description">Descripción breve del artículo 4. <a class="article-link" href="link-articulo-4.html">Leer más</a></p>
+          </div>
+      </li>
+  </ul>
+
+  <div class="no-results" id="noResults">
+      <p>No se encontraron artículos que coincidan con su búsqueda.</p>
+      <img src="https://ethic.es/wp-content/uploads/2023/03/imagen.jpg" alt="Sin resultados">
+  </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+          <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+            <a property="dct:title" rel="cc:attributionURL" href="https://yoline.es">YoLine</a> by 
+            <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://yoline.es">Jan Queralt</a> 
+            is licensed under 
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
+              Creative Commons Attribution-ShareAlike 4.0 International
+            </a>
+          </p>
+          <div class="license-icons">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="SA">
+          </div>
+          <br>
+          <a style="border: 2px solid black;" href="https://github.com" target="_blank"><button style="font-size:15px; border: 1px solid #f2f2f2;">Contribute <i class="fa fa-github"></i></button></a>
+        </div>
+
+      </footer>
+      
+      <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const articles = document.querySelectorAll('.article-item');
+    let hasResults = false; // Variable para verificar si hay resultados
+
+    articles.forEach(article => {
+        const title = article.querySelector('.article-title').textContent.toLowerCase();
+        
+        // Verifica si el título incluye el término de búsqueda o si son similares
+        if (title.includes(searchTerm) || isSimilar(title, searchTerm)) {
+            article.style.display = ''; // Mostrar artículo
+            hasResults = true; // Encontrar al menos un resultado
+        } else {
+            article.style.display = 'none'; // Ocultar artículo
+        }
+    });
+
+    // Mostrar u ocultar la sección de "no resultados"
+    const noResults = document.getElementById('noResults');
+    if (hasResults) {
+        noResults.style.display = 'none'; // Ocultar mensaje de no resultados
+    } else {
+        noResults.style.display = ''; // Mostrar mensaje de no resultados
+    }
+});
+
+// Función para determinar si dos cadenas son similares
+function isSimilar(str1, str2) {
+    // Aquí puedes implementar un algoritmo de similitud, como Levenshtein
+    // Por simplicidad, haremos una comparación básica usando la longitud de la coincidencia
+    const similarityThreshold = Math.floor(str2.length * 0.7); // Por ejemplo, 70% de longitud
+    return str1.length >= similarityThreshold && str1.startsWith(str2); // Compara si el inicio es igual
+}
+eatgbef<bv
+      </script>
+
+</body>
+</html>
